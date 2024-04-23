@@ -1,9 +1,14 @@
-import styles from './page.module.css';
+import Hero from '@/components/Hero/Hero';
+import FeaturedPosts from '@/components/FeaturedPosts/FeaturedPosts';
+import { getFeaturedPosts } from '@/utils/postUtil';
+
+export const dynamic = 'force-dynamic';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <h1>Hello</h1>
-    </main>
+    <>
+      <Hero />
+      <FeaturedPosts posts={getFeaturedPosts()} />
+    </>
   );
 }
